@@ -1,0 +1,15 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    thesaurus (0.1.0)
+    thor (0.19.4)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  thesaurus
+  thor
+
+BUNDLED WITH
+   1.14.6
