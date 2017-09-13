@@ -3,11 +3,13 @@ require 'rubygems'
 require 'bundler/setup'
 Bundler.require(:default)
 
+require 'synony/version'
+
 module Synony
   class CLI < Thor
     WORDS_TO_SKIP = ['a', 'the', 'of', 'an']
 
-    desc "replace", "Replace text in STDIN with a synonym, returning the resulting string on STDOUT"
+    desc 'replace', 'Replace text in STDIN with a synonym, returning the resulting string on STDOUT'
     def replace
       split_up_text = STDIN.read.split(/(\W)/)
 
@@ -27,6 +29,11 @@ module Synony
         end
 
       STDOUT.write(replaced_text.join(''))
+    end
+
+    desc 'version', 'Return the version of this library'
+    def version
+      puts Synony::VERSION
     end
   end
 end
