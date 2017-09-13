@@ -23,7 +23,7 @@ module Synony
 
           entries = Thesaurus.lookup(fragment)
           if entries.any?
-            next entries.first.root
+            next entries.sample.root
           else
             next fragment
           end
