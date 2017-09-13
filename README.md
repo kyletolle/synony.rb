@@ -40,6 +40,7 @@ So monad asked, like concupiscence we acta current?
 - Loses capitalization on words
 - Chooses a random synonym for each word
 - Leaves original word if no synonym is found
+- Doesn't handle contractions well
 
 ## License
 

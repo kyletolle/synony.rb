@@ -19,11 +19,14 @@ module Synony
           next fragment if fragment == ''
           next fragment if fragment =~ /[[:space:]]/
           next fragment if fragment =~ /[[:punct:]]/
-          next fragment if WORDS_TO_SKIP.include?(fragment)
+          word = fragment.downcase
+          next fragment if WORDS_TO_SKIP.include?(word)
 
-          entries = Thesaurus.lookup(fragment)
+          entries = Thesaurus.lookup(word)
           if entries.any?
-            next entries.sample.root
+            new_word = entries.sample.root
+            new_word.capitalize! if fragment.chars[0].match(/[[:upper:]]/)
+            next new_word
           else
             next fragment
           end
