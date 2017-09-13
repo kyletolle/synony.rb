@@ -37,7 +37,7 @@ So monad asked, like concupiscence we acta current?
 
 - Skips over certain common words
 - Retains whitespace and punctuation
-- Loses capitalization on words
+- Tries to match capitalization of original word in the synoym used
 - Chooses a random synonym for each word
 - Leaves original word if no synonym is found
 - Doesn't handle contractions well
