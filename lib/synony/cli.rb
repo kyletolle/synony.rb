@@ -9,9 +9,9 @@ module Synony
   class CLI < Thor
     WORDS_TO_SKIP = ['a', 'the', 'of', 'an']
 
-    desc 'replace', 'Replace text in STDIN with a synonym, returning the resulting string on STDOUT'
+    desc 'replace', 'Replace each word in stdin with a synonym, returning the modified text on stdout'
     def replace
-      split_up_text = STDIN.read.split(/(\W)/)
+      split_up_text = $stdin.read.split(/(\W)/)
 
       replaced_text =
         split_up_text.map do |fragment|
@@ -28,7 +28,7 @@ module Synony
           end
         end
 
-      STDOUT.write(replaced_text.join(''))
+      $stdout.write(replaced_text.join(''))
     end
 
     desc 'version', 'Return the version of this library'
