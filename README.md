@@ -17,6 +17,14 @@ $ echo "We each stand alone." | bin/synony replace
 We all abide absolute.
 ```
 
+## Notes
+
+- Skips over certain common words
+- Retains whitespace and punctuation
+- Loses capitalization on words
+- Chooses the first synonym found
+- Leaves original word if no synonym is found
+
 ## License
 
 MIT
