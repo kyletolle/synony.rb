@@ -10,11 +10,27 @@ Once you have the source locally, install the needed gems.
 
 ## Usage
 
-Pass the text you wish synonymized in to STDIN. The replaced text will be available via STDOUT.
+Reads text from the filenames given, or stdin, or a combination of the two. Replaces words in the text with their synonyms. The modified text is written to stdout.
 
 ```
+# From stdin
 $ echo "We each stand alone." | bin/synony replace
-We all abide absolute.
+> We all abide absolute.
+
+# From a file
+$ bin/synony replace file1.txt
+> We all abide absolute.
+
+# From multiple files
+$ bin/synony replace file1.txt file2.txt
+> We all abide absolute.
+So ace asked, as aim we abide about?
+
+# From multiple files and stdin
+$ echo 'Which way do we go!?' |  bin/synony replace file1.txt - file2.txt
+> We all abide absolute.
+Which access accompany we abide!?
+So ace asked, as aim we abide about?
 ```
 
 ## Notes
