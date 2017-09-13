@@ -25,7 +25,7 @@ module Synony
           entries = Thesaurus.lookup(word)
           if entries.any?
             new_word = entries.sample.root
-            new_word.capitalize! if fragment.chars[0].match(/[[:upper:]]/)
+            new_word.capitalize! if fragment.chr.match(/[[:upper:]]/)
             next new_word
           else
             next fragment
